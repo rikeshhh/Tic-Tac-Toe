@@ -1,0 +1,16 @@
+#gameContainer{
+font-family: 'Permanent Marker', cursive;
+}
+.cell{
+    width: 75px;
+    height: 74px;
+    border: 2px solid black;
+    cursor: pointer;
+
+}
+#cellContainer{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    margin: auto;
+    width: 225px;
+}

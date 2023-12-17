@@ -1,16 +1,114 @@
-#gameContainer{
-font-family: 'Permanent Marker', cursive;
+body {
+  font-family: "Permanent Marker", cursive;
 }
-.cell{
-    width: 75px;
-    height: 74px;
-    border: 2px solid black;
-    cursor: pointer;
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.gameContainer {
+  max-width: calc(900px + 30px);
+  width: 100%;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 22px;
+}
+.cell {
+  width: 75px;
+  height: 74px;
+  border: 2px solid black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: border-animation 2s  ease-in-out infinite alternate-reverse;
 
 }
-#cellContainer{
-    display: grid;
-    grid-template-columns: repeat(3,auto);
-    margin: auto;
-    width: 225px;
+#cellContainer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  margin: auto;
+  width: 225px;
+
+}
+#restartGame {
+  border: 4px solid black;
+  padding: 22px;
+  border-radius: 9px;
+  animation: border-animation 4s  ease-in-out infinite alternate-reverse;
+
+}
+h1::before {
+  content: open-quote;
+}
+h1::after {
+  content: close-quote;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(-300%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+.winner {
+  animation: slide-in 100ms ease-in-out;
+  color: red;
+  animation-iteration-count: 3;
+}
+@keyframes border-animation{
+  0%{
+    border:2px solid red;
+
+  }
+  10%{
+    border:2px solid yellow;
+
+  }
+  25%{
+    border:2px solid pink;
+  }
+  50%{
+    border: 2px solid firebrick;
+  }
+  75%{
+    border:2px solid navy
+  }
+  100%{
+    border:2px solid rosybrown
+  }
+
+}
+.tictac{
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.tic,
+.tac{
+ animation: rotator 2s ease-in-out infinite alternate-reverse;
+ font-size: 22px;
+
+}
+@keyframes rotator {
+to{
+  transform: rotate(0deg);
+  color: red;
+}
+from{
+  transform: rotate(360deg);
+  color: mediumseagreen;
+}
 }
